@@ -26,12 +26,12 @@ public class VueloController {
 
     @GetMapping("/flights")
     public ResponseEntity<List<VueloDTO>> filtrarVuelos(
-            @RequestParam( required = false) LocalDate fechaIda,
-            @RequestParam( required = false) LocalDate fechaVuelta,
-            @RequestParam( required = false) String origen,
-            @RequestParam( required = false) String destino) {
+            @RequestParam( required = false) LocalDate dateFrom,
+            @RequestParam( required = false) LocalDate dateTo,
+            @RequestParam( required = false) String origin,
+            @RequestParam( required = false) String destination) {
 
-        List<VueloDTO> vuelos = service.filtrarVuelos(fechaIda, fechaVuelta, origen, destino);
+        List<VueloDTO> vuelos = service.filtrarVuelos(dateFrom, dateTo, origin, destination);
         return ResponseEntity.ok(vuelos);
     }
 

@@ -61,7 +61,6 @@ public class HotelReservaService implements HotelReservaServiceInterface{
         return this.conversionADto(guaradarReservaHotel);
 
     }
-
     @Override
     public Double calcularTotalPrecio(LocalDate fechaEntrada, LocalDate fechaSalida, String tipoHabitacion) {
         if (fechaEntrada == null || fechaSalida == null || !fechaSalida.isAfter(fechaEntrada)) {
