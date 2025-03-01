@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "a141238b-42d4-4ecc-900b-ac9efdb52dc5",
+		"name": "pruebaTecnica_4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29661950"
+	},
+	"item": [
+		{
+			"name": "todas las Reservas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dateFrom\": \"2025-06-01\",\r\n  \"dateTo\": \"2025-06-07\",\r\n  \"nights\": 6,\r\n  \"place\": \"Paris\",\r\n  \"hotelCode\": \"HOTEL123\",\r\n  \"peopleQ\": 2,\r\n  \"roomType\": \"Double\",\r\n  \"hosts\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/room",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear Hotel",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigoHotel\": \"HOTEL123\",\r\n    \"nombre\": \"hotel las marismas\",\r\n    \"lugar\": \"almeria\",\r\n    \"numeroNoches\": 3,\r\n    \"tipoHabitacion\": \"Suite\",\r\n    \"precioPorNoche\": 150.50,\r\n    \"numeroPersonas\": 2,\r\n    \"disponibleDesde\": \"2025-06-10\",\r\n    \"disponibleHasta\": \"2025-06-20\",\r\n    \"reservado\": false,\r\n    \"reservas\": []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar Vuelos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/flight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear Vuelo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightNumber\": \"BVR65\",\r\n  \"origin\": \"Londres\",\r\n  \"destination\": \"Australia\",\r\n  \"seatType\": \"economy\",\r\n  \"pricePerPerson\": 400.75,\r\n  \"departureDate\": \"2025-03-15\",\r\n  \"returnDate\": \"2025-03-20\",\r\n  \"reservations\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/flights/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flights",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar vuelo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"flightNumber\": \"IB5678\",\r\n        \"origin\": \"Madrid\",\r\n        \"destination\": \"Paris\",\r\n        \"seatType\": \"Business\",\r\n        \"pricePerPerson\": 220.75,\r\n        \"departureDate\": \"2025-06-15\",\r\n        \"returnDate\": \"2025-06-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/flights/edit/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flights",
+						"edit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar vuelo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/flights/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flights",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filtrar vuelos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/flights?fechaIda=2025-03-15&fechaVuelta=2025-03-20&origen=malaga&destino=galicia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flights"
+					],
+					"query": [
+						{
+							"key": "fechaIda",
+							"value": "2025-03-15"
+						},
+						{
+							"key": "fechaVuelta",
+							"value": "2025-03-20"
+						},
+						{
+							"key": "origen",
+							"value": "malaga"
+						},
+						{
+							"key": "destino",
+							"value": "galicia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar vuelo por id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/flights/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flights",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar hoteles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar hotel por id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar hotel",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigoHotel\": \"H123\",\r\n        \"nombre\": \"Hotel calma\",\r\n        \"lugar\": \"Cadiz, España\",\r\n        \"numeroNoches\": 5,\r\n        \"tipoHabitacion\": \"Doble\",\r\n        \"precioPorNoche\": 159.5,\r\n        \"numeroPersonas\": 2.0,\r\n        \"disponibleDesde\": \"2025-01-01\",\r\n        \"disponibleHasta\": \"2025-12-31\",\r\n        \"reservado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/edit/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"edit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar hotel",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservas de hoteles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"dateFrom\": \"2025-06-10\",\r\n    \"dateTo\": \"2025-06-15\",\r\n    \"nights\": 5,\r\n    \"place\": \"Cadiz, España\",\r\n    \"hotelCode\": \"H12\",\r\n    \"peopleQ\": 2,\r\n    \"roomType\": \"Doble\",\r\n    \"isBooked\": true,\r\n    \"clientes\": {\r\n        \"identificadorCliente\": 2},\r\n    \"hoteles\": {\r\n        \"identificador\" : 2}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/room-booking/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"room-booking",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar hotel por id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserva vuelo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "empleados1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"travelDate\": \"2025-03-15\",\r\n  \"departureLocation\": \"Malaga\",\r\n  \"arrivalLocation\": \"Galicia\",\r\n  \"airlineCode\": \"123\",\r\n  \"passengerCount\": 2,\r\n  \"classType\": \"economy\",\r\n  \"isBooked\": true,\r\n  \"passengers\": {\r\n    \"identificadorCliente\": 1\r\n  },\r\n  \"reservas\": {\r\n    \"flightId\": 3}\r\n    \r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/agency/flight-booking/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"flight-booking",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filtrar hoteles",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "empleados1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agency/hotels/rooms?fechaComienzo=2025-08-10&fechaFin=2025-08-20&destino=cadiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agency",
+						"hotels",
+						"rooms"
+					],
+					"query": [
+						{
+							"key": "fechaComienzo",
+							"value": "2025-08-10"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2025-08-20"
+						},
+						{
+							"key": "destino",
+							"value": "cadiz"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

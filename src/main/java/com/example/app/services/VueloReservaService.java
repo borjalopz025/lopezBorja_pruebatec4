@@ -136,7 +136,7 @@ public class VueloReservaService implements VueloReservaServiceInterface{
                 vueloReserva.getDate(),
                 vueloReserva.getOrigin(),
                 vueloReserva.getDestination(),
-                vueloReserva.getFlightCode(),
+                vueloReserva.getVuelo().getNroVuelo(),
                 vueloReserva.getPeopleQ(),
                 vueloReserva.getSeatType(),
                 vueloReserva.getReservado(),
